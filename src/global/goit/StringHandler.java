@@ -7,12 +7,13 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class StringHandler {
-    public static List<String> filteredOddElements(List<String> inputList) {
+    public static String filteredOddElements(List<String> inputList) {
         List<String> result = new ArrayList<>(inputList);
 
         return IntStream.range(0, result.size())
                 .filter(n -> n % 2 != 0)
-                .mapToObj(result::get).collect(Collectors.toList());
+                .mapToObj((x) -> String.format("%d. %s", x, result.get(x)))
+                .collect(Collectors.joining(", ", "", "..."));
     }
 
     public static List<String> upperCaseSortedList(List<String> inputList) {

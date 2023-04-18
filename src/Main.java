@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Ivan", "Peter", "Sergiy", "Yan", "Anton", "Boris");
 //        ________first_________
-        List<String> filteredList = StringHandler.filteredOddElements(list);
+        String filteredList = StringHandler.filteredOddElements(list);
         System.out.println(filteredList);
         System.out.println("_________________________");
 
@@ -20,7 +20,7 @@ public class Main {
         System.out.println("_________________________");
 
 //        ___________third_________
-        Integer[][] dualIntArray = new Integer[][]{{1, 2, 0}, {4, 5, 85, 15646}};
+        String[] dualIntArray = new String[]{"1, 2, 0", "4, 5, 85, 15646"};
         IntegerHandler.printDoubleArray(dualIntArray);
         System.out.println("_________________________");
 

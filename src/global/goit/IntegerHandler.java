@@ -5,11 +5,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class IntegerHandler {
-    public static void printDoubleArray(Integer[][] inputArray) {
+    public static void printDoubleArray(String[] inputArray) {
         String result = Arrays.stream(inputArray)
-                .flatMap(Arrays::stream)
+                .map((x) -> x.split(", "))
+                .flatMap(Stream::of)
+                .mapToInt(Integer::parseInt)
                 .sorted()
-                .map((x) -> "" + x)
+                .mapToObj(Integer::toString)
                 .collect(Collectors.joining(", "));
 
         System.out.println(result);
